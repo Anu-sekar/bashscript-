@@ -1,0 +1,99 @@
+https://medium.com/@ane.masawi/bash-scripting-projects-for-beginners-ded7db5473bb
+
+
+Project 1: Password generator
+
+For this project, you will create a password generator that can validate user input and save encrypted passwords to a text file.
+
+read command :-
+~~~~~~~~~~~~~~~~~~~~~~
+
+1. Basic Example: Storing User Input in a Variable :-
+#!/bin/bash
+
+# Ask for the user's name
+echo "What is your name?"
+
+# Read the user input and store it in a variable
+read user_name
+
+# Greet the user with the input name
+echo "Hello, $user_name!"
+
+--------------------------------------------
+2. Reading Multiple Variables :-
+       #!/bin/bash
+
+# Ask for the user's first and last names
+echo "Please enter your first and last name:"
+
+# Read both first and last names and store them in variables
+read first_name last_name
+
+# Display the full name
+echo "Hello, $first_name $last_name!"
+------------------------------------------------------
+
+3. Setting a Prompt for User Input :-
+
+      #!/bin/bash
+
+# Prompt the user to enter their age using the -p option
+read -p "Please enter your age: " user_age
+
+# Display the entered age
+echo "Your age is $user_age."
+
+--------------------------------------------------------------
+
+4. Hiding Input (Password Entry) :-
+
+       #!/bin/bash
+
+# Prompt for password without showing input on the screen
+read -s -p "Enter your password: " user_password
+
+# Display a confirmation message
+echo -e "\nPassword entered successfully."
+
+-------------------------------------------------
+
+5. Using Default Values with read :-
+
+      #!/bin/bash
+
+# Prompt for a favorite color, with a default value if nothing is entered
+read -p "What is your favorite color? (default: blue): " favorite_color
+
+# Set a default value if no input is given
+favorite_color=${favorite_color:-blue}
+
+# Display the color
+echo "Your favorite color is $favorite_color."
+
+-------------------------------------------------------------------
+
+6. Limiting Input Length :-
+
+   #!/bin/bash
+
+# Ask for a short nickname
+read -n 3 -p "Enter your nickname (max 3 characters): " user_nickname
+
+# Display the entered nickname
+echo -e "\nYour nickname is $user_nickname."
+
+----------------------------------------------------------------
+
+
+    Summary of read Command Options :-
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+-p: Prompts the user with a message before accepting input.
+-n: Limits the number of characters the user can input.
+-s: Hides the input (useful for sensitive information like passwords).
+-t: Sets a timeout for input in seconds.
+-a: Reads input into an array (splits input by spaces).
+-e: Enables input editing (e.g., with arrow keys).
+       
